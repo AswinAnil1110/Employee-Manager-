@@ -48,11 +48,12 @@ class EmployeeManager(DbConnect):
             query = "select * from employee"
             self.cursor.execute(query)
             record = self.cursor.fetchall()
-            for data in record:
-                print(data)
+            # for data in record:
+            #     print(data)
+            return record
         except Exception as e:
-            print(e)
-
+            # print(e)
+            return []
     def retrieve(self,id=None):
         try:
             record=self.get_object(id=id)
